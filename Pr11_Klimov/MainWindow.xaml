@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal" Margin="5,5,5,388">
             <Label Margin="10" FontSize="15" FontWeight="Bold" Content="Введите разделитель:" VerticalAlignment="Center"/>
-            <TextBox TextChanged="Razdel_TextChanged" x:Name="razdel" TextWrapping="Wrap" Width="47" Height="33" FontSize="15" VerticalAlignment="Center"/>
+            <TextBox x:Name="razdel" TextWrapping="Wrap" Width="47" Height="33" FontSize="15" VerticalAlignment="Center"/>
             <Button Click="SortText" Content="Вывести список" Height="30" FontSize="15" Width="150" Margin="400, 10"/>
         </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" Margin="0,60,400,0" ScrollChanged="ScrollViewer_ScrollChanged">
@@ -19,7 +19,7 @@
         </ScrollViewer>
         <StackPanel Orientation="Vertical" Margin="400,60,0,0">
             <Label Width="400" Height="30" VerticalAlignment="Top" Content="Список имён всех учащихся" FontSize="15" FontWeight="Bold"/>
-            <Label x:Name="SortName" Width="392" Height="394" BorderThickness="2" BorderBrush="Black"/>
+            <TextBlock x:Name="SortName" Width="392" Height="394" TextWrapping="Wrap" Padding="5" FontSize="13"/>
         </StackPanel>
     </Grid>
 </Window>

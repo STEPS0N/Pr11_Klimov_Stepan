@@ -23,5 +23,10 @@ namespace Pr11_Klimov.Classes
         {
             return $"{firstname} {middlename} {lastname}";
         }
+
+        public string GetFIO(string separator)
+        {
+            return $"{firstname} {middlename} {lastname}{separator}";
+        }
     }
 }

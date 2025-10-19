@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,7 +11,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Text.RegularExpressions;
 
 namespace Pr11_Klimov
 {
@@ -53,34 +55,10 @@ namespace Pr11_Klimov
 
         private void SortText(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Razdel_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string text = razdel.Text.ToLower().Trim();
-            
-            if (string.IsNullOrEmpty(text))
-            {
-                return;
-            }
-
-            Regex regex = new Regex(@"^[,]$");
-            MatchCollection matches = regex.Matches(text);
-            if (text.Length > 1)
-            {
-                razdel.Text = "";
-                MessageBox.Show("Допустим только один знак в строке!");
-            }
-            else if (regex.IsMatch(text))
-            {
-                
-            }
-            else
-            {
-                razdel.Text = "";
-                MessageBox.Show("Введен неправильный знак! Допустимы: ,");
-            }
+            SortName.Text = "";
+            var stroke = AllStudent.Select(e => e.GetFIO(razdel.Text));
+            var names = string.Join("", stroke);
+            SortName.Text = names;
         }
     }
 }
