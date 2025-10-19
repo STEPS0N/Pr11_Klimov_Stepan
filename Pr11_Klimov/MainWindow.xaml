@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal" Margin="5,5,5,388">
             <Label Margin="10" FontSize="15" FontWeight="Bold" Content="Введите разделитель:" VerticalAlignment="Center"/>
-            <TextBox x:Name="razdel" TextWrapping="Wrap" Width="47" Height="33" FontSize="15" VerticalAlignment="Center"/>
+            <TextBox TextChanged="Razdel_TextChanged" x:Name="razdel" TextWrapping="Wrap" Width="47" Height="33" FontSize="15" VerticalAlignment="Center"/>
             <Button Click="SortText" Content="Вывести список" Height="30" FontSize="15" Width="150" Margin="400, 10"/>
         </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" Margin="0,60,400,0" ScrollChanged="ScrollViewer_ScrollChanged">

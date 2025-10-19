@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Pr11_Klimov
 {
@@ -53,6 +54,33 @@ namespace Pr11_Klimov
         private void SortText(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Razdel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = razdel.Text.ToLower().Trim();
+            
+            if (string.IsNullOrEmpty(text))
+            {
+                return;
+            }
+
+            Regex regex = new Regex(@"^[,]$");
+            MatchCollection matches = regex.Matches(text);
+            if (text.Length > 1)
+            {
+                razdel.Text = "";
+                MessageBox.Show("Допустим только один знак в строке!");
+            }
+            else if (regex.IsMatch(text))
+            {
+                
+            }
+            else
+            {
+                razdel.Text = "";
+                MessageBox.Show("Введен неправильный знак! Допустимы: ,");
+            }
         }
     }
 }
